@@ -3,9 +3,17 @@ name = "pyserdesqueezebox"
 version = "0.1.0"
 authors = ["Owen Synge <owen.synge@jaysnest.de>"]
 edition = "2018"
+
+[dependencies]
+serdesqueezebox = { git = "https://github.com/osynge/serdesqueezebox.git" }
+serde_json = "*"
+
+
+[lib]
+name = "pyserdesqueezebox"
 crate-type = ["cdylib"]
 
 
-[dependencies]
-pyo3 = "*"
-
+[dependencies.pyo3]
+version = ">=0.6.0"
+features = ["extension-module"]
